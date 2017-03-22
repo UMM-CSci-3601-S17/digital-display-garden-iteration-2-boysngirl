@@ -1,6 +1,5 @@
 package umm3601.digitalDisplayGarden;
 
-import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
@@ -14,7 +13,9 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
 
 import static com.mongodb.client.model.Filters.eq;
 
