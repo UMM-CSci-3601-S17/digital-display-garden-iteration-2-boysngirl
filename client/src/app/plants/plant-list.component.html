@@ -33,10 +33,6 @@
 
 <ul class="list-group">
 
-    <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-    </button>
-
     <select id="locationDropdown" (change)="populateFlowers()">
         <option value="">Select Bed</option>
         <option *ngFor="let location of locations" value="{{location._id}}">{{location._id}}</option>
@@ -54,8 +50,31 @@
             {{"Garden Location: " + plant.gardenLocation}}</button>
         <dialog-component  [(visible)]="showDialog" *ngFor="let plant of plants">
              <h1>{{plant.cultivar}} (This is the last flower in the list)</h1>
-            <h2>{{plant.commonName}}<br>Garden Location: {{plant.gardenLocation}}</h2>
-             <button name = {{plant.cultivar}} (click)="showDialog = !showDialog" class="btn">Close</button>
+             <h2>{{plant.commonName}}<br>Garden Location: {{plant.gardenLocation}}</h2>
+
+            <br>
+            <div *ngIf="!rated">
+                <button type="button" (click)="this.rate('like')"><span class="glyphicon glyphicon-thumbs-up"></span> Like</button>
+                <button type="button" (click)="this.rate('dislike')"><span class="glyphicon glyphicon-thumbs-down"></span> Dislike</button>
+            </div>
+            <div *ngIf="rated">
+                Thanks for your feedback!
+            </div>
+            <br>
+
+            <div *ngIf="!commented">
+                <textarea [(ngModel)]="commentText" rows="5" wrap="on" style="width: 95%;"></textarea>
+
+                <button type="button" (click)="this.comment(commentText)">Leave a comment</button>
+            </div>
+            <div *ngIf="commented">
+                Your comment has been submitted.
+            </div>
+            <br>
+            <br>
+            <button name = {{plant.cultivar}} (click)="showDialog = !showDialog" class="btn">Close</button>
+
+
         </dialog-component>
 
     </li>
