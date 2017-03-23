@@ -13,6 +13,9 @@ export class PlantListComponent implements OnInit {
     public plants: Plant[];
     public locations: Plant[];
 
+    private rated: Boolean = false;
+    private commented: Boolean = false;
+
     constructor(private plantListService: PlantListService) {
         // this.plants = this.plantListService.getPlants();
     }
@@ -49,4 +52,21 @@ export class PlantListComponent implements OnInit {
             }
         );
     }
+
+    private rate(rating: string): void {
+        if(!this.rated){
+            this.plantListService.ratePlant(this.plants["_id"]["$oid"], rating)
+                .subscribe(succeeded => this.rated = succeeded);
+        }
+    }
+
+    private comment(comment: string): void {
+        if(!this.commented){
+            if(comment != null) {
+                this.plantListService.commentPlant(this.plants["_id"]["$oid"], comment)
+                    .subscribe(succeeded => this.commented = succeeded);
+            }
+        }
+    }
+
 }

@@ -22,4 +22,16 @@ export class PlantListService {
     getFlowersByFilter(filterUrl: string): Observable<Plant[]> {
         return this.http.request(this.plantUrl + filterUrl).map(res => res.json());
     }
+
+    ratePlant(id: string, rating: string): Observable<Boolean> {
+        return this.http.request(this.plantUrl + "/" + id + "/" + rating).map(res => res.json());
+    }
+
+    commentPlant(id: string, comment: string): Observable<Boolean> {
+        let returnObject = {
+            plantId: id,
+            comment: comment
+        };
+        return this.http.post(this.plantUrl + "/" + "leaveComment", JSON.stringify(returnObject)).map(res => res.json());
+    }
 }
