@@ -19,7 +19,7 @@ public class FilterByCommonName {
         PopulateMockDatabase db = new PopulateMockDatabase();
         db.clearAndPopulateDBAgain();
     }
-
+ 
     @Test
     public void filterPlantsByCommonName() throws IOException {
         PlantController plantController = new PlantController();
