@@ -86,6 +86,28 @@ public class Server {
             return "Sorry, we couldn't find that!";
         });
 
+        // Like a specific plant
+        // todo Should this be POST or PUT or something?
+        get("api/plant/:id/like", (req, res) -> {
+            res.type("application/json");
+            String id = req.params("id");
+            return plantController.incrementMetadata(id, "likes");
+        });
+
+        // Dislike a specific plant
+        // todo Should this be POST or PUT or something?
+        get("api/plant/:id/dislike", (req, res) -> {
+            res.type("application/json");
+            String id = req.params("id");
+            return plantController.incrementMetadata(id, "dislikes");
+        });
+
+        // Posting a comment
+        post("api/plant/leaveComment", (req, res) -> {
+            res.type("application/json");
+            return plantController.storePlantComment(req.body());
+        });
+
     }
 
 }
