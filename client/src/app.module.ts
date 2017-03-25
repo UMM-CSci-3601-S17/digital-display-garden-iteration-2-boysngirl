@@ -14,6 +14,8 @@ import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
 
 import { PipeModule } from './pipe.module';
+import {BedListService} from "./app/plants/bed-list.service";
+import {BedListComponent} from "./app/plants/bed-list.component";
 
 @NgModule({
     imports: [
@@ -30,9 +32,10 @@ import { PipeModule } from './pipe.module';
         NavbarComponent,
         UserListComponent,
         PlantListComponent,
+        BedListComponent,
         DialogComponent
     ],
-    providers: [ UserListService, PlantListService ],
+    providers: [ UserListService, PlantListService, BedListService ],
     bootstrap: [ AppComponent ]
 })
 
