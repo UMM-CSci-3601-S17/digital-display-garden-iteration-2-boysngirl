@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl.svg?branch=front-end)](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl)
+
 # Claude Arabo 🇫🇷 🥈 🤺  
 
 ![Claude Arabo](https://github.com/UMM-CSci-3601-S17/digital-display-garden-iteration-1-claudearabo/blob/MakeMarkdownDocumentation/Documentation/Graphics/claude-arabo.jpg)
