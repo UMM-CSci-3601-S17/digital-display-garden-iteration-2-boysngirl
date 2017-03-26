@@ -12,6 +12,7 @@ import { PlantListService } from './app/plants/plant-list.service';
 import { DialogComponent} from './app/dialog/dialog.component';
 import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
+import { PlantSummaryService } from './app/plants/plant-summary.service';
 
 import { PipeModule } from './pipe.module';
 import {NavigatorService} from "./app/plants/navigator.service";
@@ -37,7 +38,7 @@ import {PlantSummaryComponent} from "./app/plants/plant-summary.component";
         PlantSummaryComponent,
         DialogComponent
     ],
-    providers: [ UserListService, PlantListService, NavigatorService ],
+    providers: [ UserListService, PlantListService, NavigatorService, PlantSummaryService ],
     bootstrap: [ AppComponent ]
 })
 
