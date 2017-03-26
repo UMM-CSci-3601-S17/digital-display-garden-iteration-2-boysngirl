@@ -11,9 +11,10 @@
                 Select a Flower
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li *ngFor="let plant of plants"><a href="#">{{plant.cultivar}}</a></li>
+            <ul class="dropdown-menu list-group" aria-labelledby="dropdownMenu1">
+                <li class="list-group-item" *ngFor="let plant of plants" (click)="onSelectPlant(plant)">{{plant.cultivar}}</li>
             </ul>
         </div>
+        <plant-summary-component *ngIf="currentPlant" [plant]="currentPlant"></plant-summary-component>
     </div>
 </div>

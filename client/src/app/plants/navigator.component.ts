@@ -12,6 +12,7 @@ import { Plant } from './plant';
 export class NavigatorComponent implements OnInit {
     public locations: Plant[];
     public plants: Plant[];
+    public currentPlant: Plant;
     public currentBed: string;
 
     constructor(private bedListService: NavigatorService) {
@@ -38,5 +39,9 @@ export class NavigatorComponent implements OnInit {
                 console.log(err);
             }
         );
+    }
+
+    onSelectPlant(currentPlant: Plant): void {
+        this.currentPlant = currentPlant;
     }
 }

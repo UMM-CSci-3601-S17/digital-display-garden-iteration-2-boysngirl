@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PipeModule } from './pipe.module';
 import {NavigatorService} from "./app/plants/navigator.service";
 import {NavigatorComponent} from "./app/plants/navigator.component";
+import {PlantSummaryComponent} from "./app/plants/plant-summary.component";
 
 @NgModule({
     imports: [
@@ -33,6 +34,7 @@ import {NavigatorComponent} from "./app/plants/navigator.component";
         UserListComponent,
         PlantListComponent,
         NavigatorComponent,
+        PlantSummaryComponent,
         DialogComponent
     ],
     providers: [ UserListService, PlantListService, NavigatorService ],
