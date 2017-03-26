@@ -1,9 +1,6 @@
 <dialog-component></dialog-component>
 
-
-
 <style>
-
     .vertical-menu {
         width: 200px;
     }
@@ -26,9 +23,6 @@
     }
 </style>
 
-<!--<img src="wcroc.png" class="img-responsive bg-img">-->
-
-
 <!--<h1>Digital Display Garden </h1>-->
 
 <ul class="list-group">
@@ -37,10 +31,10 @@
         <!--<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>-->
     <!--</button>-->
 
-    <select id="locationDropdown" (change)="populateFlowers()">
-        <option value="">Select Bed</option>
-        <option *ngFor="let location of locations" value="{{location._id}}">{{location._id}}</option>
-    </select>
+    <!--<select id="locationDropdown" (change)="populateFlowers()">-->
+        <!--<option value="">Select Bed</option>-->
+        <!--<option *ngFor="let location of locations" value="{{location._id}}">{{location._id}}</option>-->
+    <!--</select>-->
     <select id="flowerDropdown" (change)="populateFlowers()">
         <option value="">Select Flower</option>
         <option *ngFor="let location of locations" value="{{location._id}}">{{location._id}}</option>
@@ -91,10 +85,4 @@
 
     </li>
 <!--when the following dialog box is included into the above link, the last flower is shown!-->
-
-
-
-
-
-
 </ul>

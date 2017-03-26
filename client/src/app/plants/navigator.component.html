@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-12">Select a Bed</div>
+    <div class="col-xs-2">
+        <div class="btn-group-vertical static-nav" role="group">
+            <button class="btn btn-default" *ngFor="let location of locations" (click)="onSelectBed(location._id)">{{location._id}}</button>
+        </div>
+    </div>
+    <div class="col-xs-10">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Select a Flower
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li *ngFor="let plant of plants"><a href="#">{{plant.cultivar}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

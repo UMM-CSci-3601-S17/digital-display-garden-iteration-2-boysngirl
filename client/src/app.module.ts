@@ -14,6 +14,8 @@ import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
 
 import { PipeModule } from './pipe.module';
+import {NavigatorService} from "./app/plants/navigator.service";
+import {NavigatorComponent} from "./app/plants/navigator.component";
 
 @NgModule({
     imports: [
@@ -30,9 +32,10 @@ import { PipeModule } from './pipe.module';
         NavbarComponent,
         UserListComponent,
         PlantListComponent,
+        NavigatorComponent,
         DialogComponent
     ],
-    providers: [ UserListService, PlantListService ],
+    providers: [ UserListService, PlantListService, NavigatorService ],
     bootstrap: [ AppComponent ]
 })
 
