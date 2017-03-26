@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Plant } from './plant';
 
 @Injectable()
-export class BedListService {
+export class NavigatorService {
     constructor(private http:Http) { }
 
     getGardenLocations(): Observable<Plant[]> {

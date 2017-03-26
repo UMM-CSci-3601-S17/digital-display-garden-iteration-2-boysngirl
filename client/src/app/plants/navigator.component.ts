@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { BedListService } from "./bed-list.service";
+import { NavigatorService } from "./navigator.service";
 import { FilterBy } from "./filter.pipe";
 import { Plant } from './plant';
 
 @Component({
-    selector: 'bed-list-component',
-    templateUrl: 'bed-list.component.html'
+    selector: 'navigator-component',
+    templateUrl: 'navigator.component.html'
     // providers: [ FilterBy ]
 })
 
-export class BedListComponent implements OnInit {
+export class NavigatorComponent implements OnInit {
     public locations: Plant[];
 
-    constructor(private bedListService: BedListService) {
+    constructor(private bedListService: NavigatorService) {
         // this.plants = this.plantListService.getPlants();
     }
 
