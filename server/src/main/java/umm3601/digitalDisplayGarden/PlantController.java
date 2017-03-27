@@ -20,6 +20,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.regex;
 import static com.mongodb.client.model.Projections.include;
 import static com.mongodb.client.model.Updates.*;
 import static com.mongodb.client.model.Projections.fields;
@@ -72,7 +73,8 @@ public class PlantController {
                 = plantCollection.aggregate(
                 Arrays.asList(
                         Aggregates.group("$gardenLocation"),
-                        Aggregates.sort(Sorts.ascending("_id"))
+                        Aggregates.sort(Sorts.ascending("_id")),
+                        Aggregates.match(regex("_id", "[^\\s]"))
                 ));
         System.err.println(JSON.serialize(documents));
         return JSON.serialize(documents);
