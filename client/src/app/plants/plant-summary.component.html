@@ -1,0 +1,30 @@
+<div>
+    <h4>Cultivar: {{plant.cultivar}}</h4>
+    <h5>Common Name: {{plant.commonName}}</h5>
+    <h5>Bed: {{plant.gardenLocation}}</h5>
+    <br>
+    <div *ngIf="!rated">
+        <button type="button" (click)="this.rate('like')"> <span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <button type="button" (click)="this.rate('dislike')"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+    </div>
+    <div style="text-decoration-color: green">
+    <div *ngIf="rated">
+        Thanks for your feedback!
+    </div>
+    </div>
+    <br>
+
+    <div *ngIf="!commented">
+        <textarea [(ngModel)]="commentText" rows="5" placeholder="Leave a comment!" wrap="on" style="width: 100%;"></textarea>
+        <div align="right">
+            <button type="button" (click)="this.comment(commentText)"> Submit </button>
+        </div>
+    </div>
+    <!--<div align="right">-->
+        <!--<button type="button" (click)="this.comment(commentText)"> Submit </button>-->
+    <!--</div>-->
+
+    <div *ngIf="commented">
+        Your comment has been submitted.
+    </div>
+</div>

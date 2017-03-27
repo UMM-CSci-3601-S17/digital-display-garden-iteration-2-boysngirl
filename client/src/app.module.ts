@@ -12,8 +12,12 @@ import { PlantListService } from './app/plants/plant-list.service';
 import { DialogComponent} from './app/dialog/dialog.component';
 import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
+import { PlantSummaryService } from './app/plants/plant-summary.service';
 
 import { PipeModule } from './pipe.module';
+import {NavigatorService} from "./app/plants/navigator.service";
+import {NavigatorComponent} from "./app/plants/navigator.component";
+import {PlantSummaryComponent} from "./app/plants/plant-summary.component";
 
 @NgModule({
     imports: [
@@ -30,9 +34,11 @@ import { PipeModule } from './pipe.module';
         NavbarComponent,
         UserListComponent,
         PlantListComponent,
+        NavigatorComponent,
+        PlantSummaryComponent,
         DialogComponent
     ],
-    providers: [ UserListService, PlantListService ],
+    providers: [ UserListService, PlantListService, NavigatorService, PlantSummaryService ],
     bootstrap: [ AppComponent ]
 })
 
