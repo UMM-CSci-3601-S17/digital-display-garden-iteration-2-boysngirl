@@ -1,7 +1,7 @@
 <div>
-    <h4>Cultivar: {{plant.cultivar}}</h4>
-    <h5>Common Name: {{plant.commonName}}</h5>
-    <h5>Bed: {{plant.gardenLocation}}</h5>
+    <h4>Cultivar: {{_plant.cultivar}}</h4>
+    <h5>Common Name: {{_plant.commonName}}</h5>
+    <h5>Bed: {{_plant.gardenLocation}}</h5>
     <br>
     <div *ngIf="!rated">
         <button type="button" (click)="this.rate('like')"> <span class="glyphicon glyphicon-thumbs-up"></span></button>
