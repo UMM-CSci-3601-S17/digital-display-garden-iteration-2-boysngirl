@@ -1,31 +1,32 @@
 [![Build Status](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl.svg?branch=front-end)](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl)
 
-# Claude Arabo 🇫🇷 🥈 🤺  
+# boysNgirl 
 
-![Claude Arabo](https://github.com/UMM-CSci-3601-S17/digital-display-garden-iteration-1-claudearabo/blob/MakeMarkdownDocumentation/Documentation/Graphics/claude-arabo.jpg)
+![boysNgirl]((https://github.com/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl))
 
-## We are Claude Arabo   
-Claude Arabo was a visionary french fencer who won silver in the 1964 Summer Olympics. You can learn more about Claude [here](https://fr.wikipedia.org/wiki/Claude_Arabo). 
 Our team members are: 
 * Luz Lopez  
-* Leonid Scott 
-* Brittney Ferrian
-* Nathan Beneke 
+* Jerry Chen 
+* Marshall Hoffmann
+* Jacob Sphatt
+* Tony Song
 
-## Stories   
-#### Parse Excel (5 Jellybeans) 
-Parse Excel from an `.xlsx` file into our database.  
-#### Generate Webpages (9 Jellybeans)
-Being able to load on  the webpage, being able to grab information and drop on page.  
-#### Generate QR Codes **Flexible** (3 Jellybeans)  
-Generate unique URL's and find a tool that allows us to automatically generate, label, and store QR Codes. 
+## Epics
+*   Merge two groups’ iteration 1 projects (like/commenting system + uploading excel)
+*   Display each flower page with a nice user interface
+*   Simple navigation system
 
-## Team Velocity
-* Average Team Velocity(Magnitude): **14 Jellybeans per week**    
+## Stories
+   * Server-side integration - 5 jbs
+   * Client-side integration - 5 jbs
+   * Resolve internal issues (optional but important for the future) - 6 jbs
+   * Logo - 1 jb
+   * Show comments on the bottom of the flower page - 9 jbs
+   * Create dropdown menu that collapses - 5 jbs
+   * Make a separate bed page (distinct to flower pages) (optional) - 8 jbs
 
-## Documentation
-* [Excel File Requirements](https://github.com/UMM-CSci-3601-S17/digital-display-garden-iteration-1-claudearabo/blob/MakeMarkdownDocumentation/Documentation/ExcelFileRequirements.md)  
-* [Excel Parser Documentation](https://github.com/UMM-CSci-3601-S17/digital-display-garden-iteration-1-claudearabo/blob/MakeMarkdownDocumentation/Documentation/ExcelParser.md) 
+## Team Motto 
+Refresh the Page - Jacob Sphatt
 
 ## Running your project
 > Run the server  
