@@ -103,6 +103,14 @@ public class Server {
             return plantController.incrementMetadata(id, "dislikes");
         });
 
+        // Getting a comment
+        get("api/plant/getComments/:id", (req, res) -> {
+            res.type("application/json");
+            String id = req.params("id");
+            return plantController.getComments(id);
+        });
+
+
         // Posting a comment
         post("api/plant/leaveComment", (req, res) -> {
             res.type("application/json");

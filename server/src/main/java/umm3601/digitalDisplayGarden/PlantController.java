@@ -20,6 +20,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.regex;
 import static com.mongodb.client.model.Projections.include;
 import static com.mongodb.client.model.Updates.*;
 import static com.mongodb.client.model.Projections.fields;
@@ -72,7 +73,8 @@ public class PlantController {
                 = plantCollection.aggregate(
                 Arrays.asList(
                         Aggregates.group("$gardenLocation"),
-                        Aggregates.sort(Sorts.ascending("_id"))
+                        Aggregates.sort(Sorts.ascending("_id")),
+                        Aggregates.match(regex("_id", "[^\\s]"))
                 ));
         System.err.println(JSON.serialize(documents));
         return JSON.serialize(documents);
@@ -106,6 +108,23 @@ public class PlantController {
         Bson updateDocument = inc("metadata." + field, 1);
 
         return null != plantCollection.findOneAndUpdate(searchDocument, updateDocument);
+    }
+
+    /**
+     * Returns all comments associated with the given plant id
+     * @param id a hexadecimal ID number of a plant in the DB
+     * @return a string representation of JSON file with comment data
+     */
+    public String getComments(String id) {
+
+        ObjectId objectId = new ObjectId(id);
+
+        Document searchDocument = new Document();
+        searchDocument.append("commentOnObjectOfId", objectId);
+
+        FindIterable<Document> matchingComments = commentCollection.find(searchDocument);
+
+        return JSON.serialize(matchingComments);
     }
 
     /**
