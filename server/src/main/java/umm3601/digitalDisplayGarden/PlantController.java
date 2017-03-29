@@ -111,6 +111,23 @@ public class PlantController {
     }
 
     /**
+     * Returns all comments associated with the given plant id
+     * @param id a hexadecimal ID number of a plant in the DB
+     * @return a string representation of JSON file with comment data
+     */
+    public String getComments(String id) {
+
+        ObjectId objectId = new ObjectId(id);
+
+        Document searchDocument = new Document();
+        searchDocument.append("commentOnObjectOfId", objectId);
+
+        FindIterable<Document> matchingComments = commentCollection.find(searchDocument);
+
+        return JSON.serialize(matchingComments);
+    }
+
+    /**
      * Accepts string representation of JSON object containing
      * at least the following.
      * <code>
