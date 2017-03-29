@@ -7,9 +7,6 @@ import { NavbarComponent } from './app/navbar/navbar.component';
 import { HomeComponent} from './app/home/home.component';
 import { UserListComponent } from './app/users/user-list.component';
 import { UserListService } from './app/users/user-list.service';
-import { PlantListComponent } from './app/plants/plant-list.component';
-import { PlantListService } from './app/plants/plant-list.service';
-import { DialogComponent} from './app/dialog/dialog.component';
 import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
 import { PlantSummaryService } from './app/plants/plant-summary.service';
@@ -33,12 +30,10 @@ import {PlantSummaryComponent} from "./app/plants/plant-summary.component";
         HomeComponent,
         NavbarComponent,
         UserListComponent,
-        PlantListComponent,
         NavigatorComponent,
-        PlantSummaryComponent,
-        DialogComponent
+        PlantSummaryComponent
     ],
-    providers: [ UserListService, PlantListService, NavigatorService, PlantSummaryService ],
+    providers: [ UserListService, NavigatorService, PlantSummaryService ],
     bootstrap: [ AppComponent ]
 })
 
