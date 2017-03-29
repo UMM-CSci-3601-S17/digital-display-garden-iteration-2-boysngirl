@@ -1,23 +1,21 @@
 <div>
-    <h4>Cultivar: {{_plant.cultivar}}</h4>
-    <h5>Common Name: {{_plant.commonName}}</h5>
-    <h5>Bed: {{_plant.gardenLocation}}</h5>
+    <h3 class="text-center"> <b>{{_plant.cultivar}}</b></h3>
+    <h4 class="text-center"><b><u>Common Name</u></b>: {{_plant.commonName}}</h4>
     <br>
-    <div *ngIf="!rated">
+    <div style="text-align: center;" *ngIf="!rated">
         <button type="button" (click)="this.rate('like')"> <span class="glyphicon glyphicon-thumbs-up"></span></button>
         <button type="button" (click)="this.rate('dislike')"><span class="glyphicon glyphicon-thumbs-down"></span></button>
     </div>
-    <div style="text-decoration-color: green">
+
     <div *ngIf="rated">
         Thanks for your feedback!
-    </div>
     </div>
     <br>
 
     <div *ngIf="!commented">
-        <textarea (input)="commentText = $event.target.value" rows="5" placeholder="Leave a comment!" wrap="on" style="width: 100%;"></textarea>
+        <textarea (input)="commentText = $event.target.value" rows="5" placeholder="Leave a comment!" wrap="on" style="width: 100%"></textarea>
         <div align="right">
-            <button type="button" (click)="this.comment(commentText)"> Submit </button>
+            <button  type="button" (click)="this.comment(commentText)"> Submit </button>
         </div>
     </div>
     <!--<div align="right">-->
@@ -28,3 +26,29 @@
         Your comment has been submitted.
     </div>
 </div>
+
+<style>
+    .like-dislike-size {
+        /*width: %;*/
+        height: 50px;
+        width: 50px;
+
+    }
+
+    .center-text {
+        ali
+    }
+
+    .non-clicked-dropdown-background {
+        background-color: #BCF056;
+    }
+    /*.some {*/
+        /*!*color: green;*!*/
+        /*background-color:#BCF056;*/
+    /*}*/
+    /*.highlight-box {*/
+        /*!*color: green;*!*/
+        /*background-color:#006600;*/
+        /*color: white;*/
+    /*}*/
+</style>
