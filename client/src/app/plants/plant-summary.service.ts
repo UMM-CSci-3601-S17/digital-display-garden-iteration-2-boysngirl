@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Plant } from './plant';
+import { Comment } from './comment';
 import { Observable } from "rxjs";
 
 
@@ -28,5 +29,9 @@ export class PlantSummaryService {
             comment: comment
         };
         return this.http.post(this.plantUrl + "/" + "leaveComment", JSON.stringify(returnObject)).map(res => res.json());
+    }
+
+    getComments(id: string): Observable<Comment[]> {
+        return this.http.request(this.plantUrl + "/" + "getComments/" + id).map(res => res.json());
     }
 }

@@ -25,6 +25,9 @@
     <!--</div>-->
 
     <div *ngIf="commented">
-        Your comment has been submitted.
+        <h5>Recent Comments</h5>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let commentObj of comments">{{commentObj.comment}}</li>
+        </ul>
     </div>
 </div>

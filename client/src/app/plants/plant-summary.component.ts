@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Plant } from './plant';
+import { Comment } from './comment';
 import {ActivatedRoute, Params} from '@angular/router';
 import {PlantSummaryService} from './plant-summary.service';
 import 'rxjs/add/operator/switchMap';
@@ -15,6 +16,7 @@ export class PlantSummaryComponent {
     private rated: Boolean = false;
     private commented: Boolean = false;
     private currentQuery: string = "";
+    private comments: Comment[];
 
     constructor(private plantService: PlantSummaryService,
                 private route: ActivatedRoute,
@@ -49,6 +51,9 @@ export class PlantSummaryComponent {
                 this.plantService.commentPlant(this._plant["_id"]["$oid"], comment)
                     .subscribe(succeeded => this.commented = succeeded);
             }
+            // Populate the comments
+            this.plantService.getComments(this._plant["_id"]["$oid"])
+                .subscribe(comments => this.comments = comments);
         }
     }
 }
