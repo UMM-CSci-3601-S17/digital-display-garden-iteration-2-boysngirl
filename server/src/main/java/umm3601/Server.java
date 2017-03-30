@@ -16,6 +16,7 @@ import java.io.InputStream;
 public class Server {
     public static void main(String[] args) throws IOException {
 
+        port(4567);
 
         ExcelParser parser = new ExcelParser(false);
         parser.parseExcel();
