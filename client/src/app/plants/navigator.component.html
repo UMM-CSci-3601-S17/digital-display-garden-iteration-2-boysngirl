@@ -1,8 +1,12 @@
 <div class="row no-padding">
-    <div class="col-xs-12 text-center" >Current Bed: {{ currentBed }}</div>
+    <div class="col-xs-12 text-center">
+        <h4 *ngIf="!currentBed">Select a Bed</h4>
+        <h4 *ngIf="currentBed">Current Bed: <span class="label label-success">{{ currentBed }}</span></h4>
+    </div>
+
     <div class="col-xs-2">
         <div class="btn-group-vertical static-nav" role="group">
-            <button [class.highlight-box]="clickedButton == i" class="btn btn-default some" *ngFor="let location of locations let i=index" (click)="clickedButton = i; onSelectBed(location._id)">{{location._id}}</button>
+            <button [class.highlight-box]="clickedButton == i" class="some btn btn-default" *ngFor="let location of locations let i=index" (click)="clickedButton = i; onSelectBed(location._id)">{{location._id}}</button>
         </div>
     </div>
     <div class="col-xs-10">
@@ -22,15 +26,18 @@
 <style>
     .no-padding {
         padding-left: 0;
-
     }
     .some {
-        /*color: green;*/
-        background-color:#BCF056;
+        padding: 10px;
+        background-color: white;
+        border-radius: 0;
     }
     .highlight-box {
-        /*color: green;*/
-        background-color:#006600;
+        background-color:#4caf50;
         color: white;
+    }
+    .top-row {
+        border: 2px;
+        border-color: #4caf50;
     }
 </style>
