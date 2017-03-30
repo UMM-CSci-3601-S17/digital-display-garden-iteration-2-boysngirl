@@ -9,6 +9,9 @@ import static spark.Spark.*;
 
 import umm3601.digitalDisplayGarden.ExcelParser;
 
+import spark.Route;
+import spark.utils.IOUtils;
+import java.io.InputStream;
 
 public class Server {
     public static void main(String[] args) throws IOException {
@@ -43,12 +46,15 @@ public class Server {
 
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
-        // Simple example route
-        get("/hello", (req, res) -> "Hello World");
-
         // Redirects for the "home" page
         redirect.get("", "/");
-        redirect.get("/", "http://localhost:9000");
+
+        Route clientRoute = (req, res) -> {
+            InputStream stream = plantController.getClass().getResourceAsStream("/public/index.html");
+            return IOUtils.toString(stream);
+        };
+
+        get("/", clientRoute);
 
         // List users
         get("api/users", (req, res) -> {
@@ -78,13 +84,6 @@ public class Server {
         get("api/gardenLocations", (req, res) -> {
             res.type("application/json");
             return plantController.getGardenLocations();
-        });
-
-        // Handle "404" file not found requests:
-        notFound((req, res) -> {
-            res.type("text");
-            res.status(404);
-            return "Sorry, we couldn't find that!";
         });
 
         // Like a specific plant
@@ -117,6 +116,13 @@ public class Server {
             return plantController.storePlantComment(req.body());
         });
 
-    }
+        get("/*", clientRoute);
 
+        // Handle "404" file not found requests:
+        notFound((req, res) -> {
+            res.type("text");
+            res.status(404);
+            return "Sorry, we couldn't find that!";
+        });
+    }
 }
