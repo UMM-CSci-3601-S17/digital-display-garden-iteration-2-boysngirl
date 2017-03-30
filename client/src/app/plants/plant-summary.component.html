@@ -1,11 +1,14 @@
 <div>
-    <h4>Cultivar: {{_plant.cultivar}}</h4>
-    <h5>Common Name: {{_plant.commonName}}</h5>
-    <h5>Bed: {{_plant.gardenLocation}}</h5>
+    <h3 class="text-center"><strong>{{_plant.cultivar}}</strong></h3>
+    <h4 class="text-center">Common Name: {{_plant.commonName}}</h4>
     <br>
-    <div *ngIf="!rated">
-        <button type="button" (click)="this.rate('like')"> <span class="glyphicon glyphicon-thumbs-up"></span></button>
-        <button type="button" (click)="this.rate('dislike')"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+    <div style="text-align: center;" *ngIf="!rated">
+
+        <button type="button" style="width: 43px; height: 40px"(click)="this.rate('like')"> <span class="glyphicon glyphicon-thumbs-up"></span></button>
+
+        &nbsp;
+
+        <button type="button" style="width: 43px; height: 40px"(click)="this.rate('dislike')"><span class="glyphicon glyphicon-thumbs-down"></span></button>
     </div>
     <div style="text-decoration-color: green">
     <div *ngIf="rated">
@@ -17,7 +20,7 @@
     <div *ngIf="!commented">
         <textarea (input)="commentText = $event.target.value" rows="5" placeholder="Leave a comment!" wrap="on" style="width: 100%;"></textarea>
         <div align="right">
-            <button type="button" (click)="this.comment(commentText)"> Submit </button>
+            <button class="submit" type="button" (click)="this.comment(commentText)"> Submit </button>
         </div>
     </div>
     <!--<div align="right">-->
@@ -31,3 +34,14 @@
         </ul>
     </div>
 </div>
+
+<style>
+    .submit {
+        font-size: 16px;
+        margin-top: 5px;
+        padding: 3px;
+    }
+    .glyphicon{
+        font-size: 25px;
+    }
+</style>
