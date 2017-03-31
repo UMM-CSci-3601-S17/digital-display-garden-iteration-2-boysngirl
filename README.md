@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl.svg?branch=front-end)](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl)
+[![Build Status](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl)
 
 # boysNgirl 
 
