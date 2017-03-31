@@ -12,11 +12,11 @@ import 'rxjs/add/operator/switchMap';
 
 export class PlantSummaryComponent {
     // @Input() plant: Plant
-    private _plant: Plant;
-    private rated: Boolean = false;
-    private commented: Boolean = false;
-    private currentQuery: string = "";
-    private comments: Comment[];
+    public _plant: Plant;
+    public rated: Boolean = false;
+    public commented: Boolean = false;
+    public currentQuery: string = "";
+    public comments: Comment[];
 
     constructor(private plantService: PlantSummaryService,
                 private route: ActivatedRoute,
