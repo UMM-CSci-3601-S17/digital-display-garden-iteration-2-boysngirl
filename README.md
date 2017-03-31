@@ -24,7 +24,7 @@ Our team members are:
 - [ ] Resolve internal issues (optional but important for the future) - 6 jbs
    
     * Not all internal issues were resolved, such as:
-        * Display "Select Flower" dropdown menu after slecting bed from side `navbar`
+        * Display "Select Flower" dropdown menu **after** selecting bed from sidebar 
      
         
 - [x] Logo - 1 jb
@@ -33,7 +33,7 @@ Our team members are:
  
    * Not fully functional     
        * Takes time for database to store comment
-       * Database is sending data back before it stores the data being received
+       * Database is sending data back before it stores the comment it just received causing display problems
          
 - [x] Create dropdown menu that collapses - 5 jbs
 - [x] Make a separate bed page (distinct to flower pages) (optional) - 8 jbs
