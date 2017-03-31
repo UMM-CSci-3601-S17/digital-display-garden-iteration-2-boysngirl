@@ -49,11 +49,13 @@ export class PlantSummaryComponent {
         if(!this.commented){
             if(comment != null) {
                 this.plantService.commentPlant(this._plant["_id"]["$oid"], comment)
-                    .subscribe(succeeded => this.commented = succeeded);
+                    .subscribe(succeeded => {
+                        this.commented = succeeded;
+                        // Populate the comments - should be inside the outer subscribe to force the order
+                        this.plantService.getComments(this._plant["_id"]["$oid"])
+                            .subscribe(comments => this.comments = comments);
+                    });
             }
-            // Populate the comments
-            this.plantService.getComments(this._plant["_id"]["$oid"])
-                .subscribe(comments => this.comments = comments);
         }
     }
 }
