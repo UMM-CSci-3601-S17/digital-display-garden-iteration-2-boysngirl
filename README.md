@@ -2,7 +2,10 @@
 
 # boysNgirl 
 
-![boysNgirl]((https://github.com/UMM-CSci-3601-S17/digital-display-garden-iteration-2-boysngirl))
+##### Digital Ocean IP ADDRESS: 
+> **45.55.152.142:4567**
+
+
 
 Our team members are: 
 * Luz Lopez  
