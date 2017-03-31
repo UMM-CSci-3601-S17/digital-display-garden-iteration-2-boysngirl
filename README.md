@@ -18,7 +18,7 @@ Our team members are:
 
  
 
-### Stories
+### Stories 
 - [x] Server-side integration - 5 jbs
 - [x] Client-side integration - 5 jbs
 - [ ] Resolve internal issues (optional but important for the future) - 6 jbs
