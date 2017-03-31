@@ -39,7 +39,7 @@ Our team members are:
        * Database is sending data back before it stores the comment it just received causing display problems
          
 - [x] Create dropdown menu that collapses - 5 jbs
-- [x] Make a separate bed page (distinct to flower pages) (optional) - 8 jbs
+- [ ] Make a separate bed page (distinct to flower pages) (optional) - 8 jbs
 
 
 
