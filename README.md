@@ -11,7 +11,7 @@ Our team members are:
 * Jacob Sphatt
 * Tony Song
 
-##Epics
+## Epics
 *   Merge two groups’ iteration 1 projects (like/commenting system + uploading excel)
 *   Display each flower page with a nice user interface
 *   Simple navigation system
